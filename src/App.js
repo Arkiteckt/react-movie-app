@@ -4,8 +4,8 @@ import NavLayout from "./Layouts/NavLayout";
 import HomePage from "./Pages/HomePage";
 import MovieListPage from "./Pages/MovieListPage";
 
-const sampleData = [
-  [
+const [movieList, setMovieList] = useState(sampleMovies);[
+  
     {
       "Title": "Avatar",
       "Year": "2009",
@@ -475,10 +475,10 @@ const sampleData = [
         "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMyNjg5ODYwNF5BMl5BanBnXkFtZTgwMTE1NDU4OTE@._V1_SY1000_CR0,0,1477,1000_AL_.jpg"
       ]
     }
-  ]
 ]
 
 const App = () => {
+  
  const router = createBrowserRouter([
   {
     path: "/",
@@ -497,6 +497,20 @@ const App = () => {
       element: <MovieListPage/>
     }
     ]
+  },
+  {
+    path: "/movies",
+    element: <MovieLayout movieList={movieList} />,
+    children: [
+      {
+        element: <MovieListPage movieList={movieList} />,
+        index: true,
+      },
+    ],
+  },
+  {
+    element: <MoviePage movieList={movieList}/>,
+    path: ":title",
   }
  ])
 

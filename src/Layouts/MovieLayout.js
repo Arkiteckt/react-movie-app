@@ -1,13 +1,15 @@
 import MovieSideBar from "../Components/MovieSidebar"
 import {Outlet} from "react-router-dom"
-const MovieLayout = () => {
-    return (
-        <div class= "movie-layout">
-        <MovieSideBar/>
-        <div class = "movie-content"> 
-        <Outlet/></div>
-        </div>
-    )
-}
+const MovieLayout = (props) => {
+	const {movieList} = props;
+  return (
+    <div className="movie-layout">
+      <MovieSideBar movieList={movieList}/>
+      <div className="movie-content">
+        <Outlet />
+      </div>
+    </div>
+  );
+};
 
 export default MovieLayout
