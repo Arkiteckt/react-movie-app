@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+//https://github.com/WDI-202/AP--React-Movie-App-Instructions/blob/main/Expanded-Instructions.md
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

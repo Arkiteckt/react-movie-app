@@ -3,9 +3,13 @@ import "./App.css";
 import NavLayout from "./Layouts/NavLayout";
 import HomePage from "./Pages/HomePage";
 import MovieListPage from "./Pages/MovieListPage";
+import { useState } from "react";
+import MovieLayout from "./Layouts/MovieLayout";
+import MoviePage from "./Pages/MoviePage";
 
-const [movieList, setMovieList] = useState(sampleMovies);[
-  
+
+const sampleMovies = [
+
     {
       "Title": "Avatar",
       "Year": "2009",
@@ -478,8 +482,9 @@ const [movieList, setMovieList] = useState(sampleMovies);[
 ]
 
 const App = () => {
-  
+const [movieList, setMovieList] = useState(sampleMovies);
  const router = createBrowserRouter([
+  
   {
     path: "/",
     element: <NavLayout/>,
@@ -487,31 +492,24 @@ const App = () => {
       { index: true,
         element: <HomePage/>
       }
-    ]
-  }
-  ,{
-    path: "/movies",
-    element: <MovieLayout/>,
-    children: [
-      {index: true,
-      element: <MovieListPage/>
-    }
-    ]
-  },
-  {
-    path: "/movies",
-    element: <MovieLayout movieList={movieList} />,
-    children: [
-      {
-        element: <MovieListPage movieList={movieList} />,
-        index: true,
+      ,{
+        path: "/movies",
+        element: <MovieLayout movieList={movieList} />,
+        children: [
+          {
+            element: <MovieListPage movieList={movieList} />,
+            index: true,
+          },
+          {
+            element: <MoviePage movieList={movieList}/>,
+            path: ":title",
+          }
+        ],
       },
-    ],
+      
+    ]
   },
-  {
-    element: <MoviePage movieList={movieList}/>,
-    path: ":title",
-  }
+  
  ])
 
 	return (

@@ -1,4 +1,5 @@
-const MovieListPage = () => {
+import MovieCard from "../Components/MovieCard";
+const MovieListPage = (props) => {
     return (
         <div class= "movie-sidebar">
         <h1> "Movie List Page</h1>

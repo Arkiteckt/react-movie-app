@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom"
 const NavBar = () => {
     return (
         <div class= "nav-bar" >
-            <Link to="/home">Home Page</Link>
+            <Link to="/">Home Page</Link>
             <Link to="/movies">Movie List</Link>
         </div>
     )

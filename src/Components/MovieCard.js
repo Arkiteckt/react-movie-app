@@ -1,4 +1,4 @@
-const MovieCard = () => {
+const MovieCard = (props) => {
     return (
         <div class= "movie-list-card">
     

@@ -4,7 +4,7 @@ const NavLayout = () => {
     return (
         <div class= "nav-layout">
         <NavBar/>
-        {Outlet}
+        <Outlet/>
         </div>
     )
 }
